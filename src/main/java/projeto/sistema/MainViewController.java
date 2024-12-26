@@ -31,8 +31,12 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    public void onMenuItemDepartmentAction() {
-        System.out.println("onMenuItemDepartmentAction");
+    public void onMenuItemDepartmentAction() throws IOException {
+        try {
+            loadView("DepartmentList.fxml");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
